@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+header {
+  display: flex;
+  color: rgb(244, 240, 248);
+  background-color: black;
+  justify-content: center;
+  align-content: center;
+  padding: 20px 0;
+}
+
+main {
+  display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+select {
+  margin: 20px 0;
+  padding: 10px 15px;
+  font-size: 20px;
+}
+
+.schedule {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
+  margin: 20px 0;
+}
+
+.date {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.date h3 {
+  margin: 0 10px;
+}
+
+.date input {
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+button {
+  margin-left: 40px;
+  padding: 4px 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  height: 50px;
+  background-color: black;
+  color: antiquewhite;
+}

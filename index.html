@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <title>Currency</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/index.js"></script>
+	</head>
+	<body>
+    <div class="content">
+		  <header><h1>Currency</h1></header>
+		  <main>
+			  <section>
+          <h1>Select currency:</h1>
+          <select id="code">
+            <option value="143" selected>Фунт стерлингов</option>
+            <option value="145">Доллар США</option>
+            <option value="290">Гривна</option>
+						<option value="292">Евро</option>
+            <option value="293">Злотый</option>
+            <option value="295">Йена</option>
+            <option value="298">Российский Рубль</option>
+            <option value="301">Тенге</option>
+            <option value="302">Турецкая лира</option>
+            <option value="304">Китайский юань</option>
+            <option value="316">Дирхам ОАЭ</option>
+            <option value="318">Египетский фунт</option>
+            <option value="332">Новый израильский шекель</option>
+          </select>
+          <h1 id="today"></h1>
+        </section>
+        <section class="schedule">
+          <h1>If you want to build a schedule select the dates</h1>
+          <div class="date">
+            <h3>from:</h3>
+					  <input type="date" id="from">
+					  <h3>to:</h3>
+					  <input type="date" id="to">
+					  <button id="push" >Build</button>
+          </div>
+          <canvas id="canvas" width="800px" height="360px"></canvas>
+        </section>
+      </main>
+    </div>
+    <footer><h2>This footer</h2></footer>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+	</body>
+</html>
