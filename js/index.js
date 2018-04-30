@@ -1,4 +1,4 @@
-const api = 'http://www.nbrb.by/API/';
+const api = 'https://www.nbrb.by/API/';
 let selectCurrency;
 
 $('#code').change(() => selectCurrency = +$('#code').val());
