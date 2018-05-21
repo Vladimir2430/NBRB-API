@@ -1,4 +1,4 @@
-const api = 'https://www.nbrb.by/API/';
+const api = 'http://www.nbrb.by/API/';
 let selectCurrency;
 
 $('#code').change(() => selectCurrency = +$('#code').val());
@@ -18,13 +18,13 @@ calendarFrom.attr('max', date);
 
 const canvas = document.getElementById('canvas');
 let w = canvas.width, h = canvas.height, schedule = canvas.getContext('2d'),
-days = 0, minRate = 0, maxRate = 1, count = 0,
+days = 0, minRate = 0, maxRate = 1, count = 0;
 color = ['blue', 'red', 'green', 'orange', 'yellow', 'gray','aquamarine', 'darkviolet', 'palegreen', 'sienna'];
 
 $(document).ready(() => selectCurrency = +$('#code').val(), toDate = $('#to').val());
 $('#from').change(() =>	fromDate = $('#from').val());
 $( '#to' ).change(() => toDate = $('#to').val());
-$('#push').click(() => count += 1);
+$('#push').click(() => count = Math.floor(Math.random() * 10));
 $('#push').click(() =>
 	$.getJSON(api + 'ExRates/Rates/Dynamics/' + selectCurrency, { 'startDate': fromDate, 'endDate': toDate }).done(function (data) {
 		$.each(data, (key, item) => {
@@ -64,7 +64,7 @@ function line (x0, y0, x1, y1) {
 function drawSchedule(key, item) {
 	let sum, step = (h - 54) / maxRate,	curr = getPropCurrency(item.Cur_OfficialRate);
 	key === 0	?	(sum = 1,	prev = curr) : sum = key;
-  scheduleLine((w - 24) / days * sum, prev * step, (w - 24) / days * (key + 1), curr * step, color[count - 1]);
+  scheduleLine((w - 24) / days * sum, prev * step, (w - 24) / days * (key + 1), curr * step, color[count]);
   prev =  curr;
 }
 
