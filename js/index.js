@@ -18,10 +18,14 @@ calendarFrom.attr('max', date);
 
 const canvas = document.getElementById('canvas');
 let w = canvas.width, h = canvas.height, schedule = canvas.getContext('2d'),
-days = 0, minRate = 0, maxRate = 1, count = 0;
+days = 0, minRate = 0, maxRate = 1, count = 0,  ctx = canvas.getContext("2d"),
 color = ['blue', 'red', 'green', 'orange', 'yellow', 'gray','aquamarine', 'darkviolet', 'palegreen', 'sienna'];
 
 $(document).ready(() => selectCurrency = +$('#code').val(), toDate = $('#to').val());
+$('#from').change(() =>	ctx.clearRect(0, 0, canvas.width, canvas.height));
+$( '#to' ).change(() => ctx.clearRect(0, 0, canvas.width, canvas.height));
+$('#from').change(() =>	coordinateGrid());
+$( '#to' ).change(() => coordinateGrid());
 $('#from').change(() =>	fromDate = $('#from').val());
 $( '#to' ).change(() => toDate = $('#to').val());
 $('#push').click(() => count = Math.floor(Math.random() * 10));
