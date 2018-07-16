@@ -1,2 +1,2 @@
 # Do you want to see my work?
-# <a href="https://uladzimir-yeudakimovich.github.io/NBRB-API">Click there ;)</a>
+# <a href="http://uladzimir-yeudakimovich.ml/NBRB-API/">Click there ;)</a>
