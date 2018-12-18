@@ -1,11 +1,12 @@
-const api = 'http://www.nbrb.by/API/';
+const api = 'http://www.nbrb.by/API/ExRates/Rates/';
 let selectCurrency;
 
-$('#code').change(() => selectCurrency = +$('#code').val());
-$('#code').change(() =>
-  $.getJSON(api + 'ExRates/Rates/' + selectCurrency).done((data) =>
-  $('#today').text(`${data.Cur_Scale} ${data.Cur_Abbreviation} costs ${data.Cur_OfficialRate} BN`))
-);
+$('#code').change(() => {
+	selectCurrency = +$('#code').val();
+  $.getJSON(api + selectCurrency).done((data) =>
+		$('#today').text(`${data.Cur_Scale} ${data.Cur_Abbreviation} costs ${data.Cur_OfficialRate} BN`)
+	)
+});
 
                                       //schedule
 const calendarTo = $('#to'), calendarFrom = $('#from');
@@ -30,7 +31,7 @@ $('#from').change(() =>	fromDate = $('#from').val());
 $( '#to' ).change(() => toDate = $('#to').val());
 $('#push').click(() => count = Math.floor(Math.random() * 10));
 $('#push').click(() =>
-	$.getJSON(api + 'ExRates/Rates/Dynamics/' + selectCurrency, { 'startDate': fromDate, 'endDate': toDate }).done(function (data) {
+	$.getJSON(api + 'Dynamics/' + selectCurrency, { 'startDate': fromDate, 'endDate': toDate }).done(function (data) {
 		$.each(data, (key, item) => {
 		  let full = item.Cur_OfficialRate * 10000 + '',
       newC = full.split('.')[0];
